@@ -125,42 +125,57 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Responsive para móviles */
 @media only screen and (max-width: 600px) {
-  /* Contenedor centrado reduce padding para móvil */
+  /* Contenedor centrado sin padding lateral muy grande */
   .contenido-centrado {
     padding-left: 1rem;
     padding-right: 1rem;
-    max-width: 100%; /* que no limite ancho en móvil */
+    max-width: 100%;
   }
 
-  /* Hero y su imagen para que no se desborde */
+  /* Imagen hero más espaciosa y sin corte */
   .hero img {
     width: 100%;
     height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   }
 
-  /* Rectángulos apilados y al 100% de ancho */
+  /* Apilar los rectángulos y espacio entre ellos */
   .bioescuela-section {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem; /* más espacio vertical */
   }
 
   .rectangulo {
     width: 100%;
     box-sizing: border-box;
-    padding: 1rem 1.2rem; /* un poco menos padding en móvil */
-    font-size: 1rem; /* tamaño de texto un poco menor para móviles */
+    padding: 1.5rem 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    border-radius: 8px;
   }
 
-  /* Ajuste de texto de la superposición para móviles */
+  /* Mejorar lectura de títulos y texto */
+  .rectangulo h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+  }
+
   .overlay-text h1 {
-    font-size: 2.5rem;
-    line-height: 1.2;
+    font-size: 2.8rem;
+    line-height: 1.1;
   }
 
   .overlay-text p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    margin-top: 0.6rem;
+  }
+
+  /* Para evitar que la superposición del texto quede muy comprimida */
+  .overlay-text {
+    width: 95%;
+    max-width: none;
+    padding: 0 1rem;
   }
 }
-
