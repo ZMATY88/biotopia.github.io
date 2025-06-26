@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* Tipografía y Reset */
 * {
   margin: 0;
@@ -61,45 +60,3 @@ footer {
 .redes a:hover {
   text-decoration: underline;
 }
-=======
-/* Fuentes y reset */
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Poppins', sans-serif; color:#222; }
-a { text-decoration:none; color:#222; margin:0 1rem; }
-
-/* Header fijo */
-header {
-  position:fixed; top:0; width:100%;
-  background:rgba(255,255,255,0.9); padding:1rem 0;
-  display:flex; justify-content:center;
-  z-index:10;
-}
-
-/* Imagen de portada tipo hero */
-.hero {
-  position:relative; height:80vh;
-  overflow:hidden;
-}
-.hero img {
-  width:100%; height:100%; object-fit:cover;
-  filter: brightness(0.7);
-}
-.hero h1{
-  position:absolute; bottom:20%; left:50%;
-  transform:translateX(-50%);
-  color:white; font-size:3rem;
-}
-
-/* Intro */
-.intro {
-  padding:4rem 2rem; text-align:center;
-  max-width:800px; margin:auto;
-  line-height:1.6;
-}
-
-/* Footer */
-footer {
-  padding:2rem; text-align:center;
-  background:#eee; margin-top:2rem;
-}
->>>>>>> 2d7dc4e (Primer commit - proyecto Biotopía)
