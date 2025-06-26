@@ -1,62 +1,104 @@
-/* Tipografía y Reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: #fefefe;
-  color: #222;
-  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  color: #111;
+  background: #fff;
 }
 
-/* Encabezado */
+/* Navegación */
 header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  padding: 1rem 2rem;
   text-align: center;
-  padding: 2rem 1rem;
-  background-color: #e8f5e9;
-}
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  z-index: 1000;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
+
 nav a {
   margin: 0 1rem;
   text-decoration: none;
-  color: #1b5e20;
-  font-weight: bold;
+  color: #111;
+  font-weight: 500;
 }
+
 nav a:hover {
   text-decoration: underline;
 }
 
-/* Secciones */
-.seccion {
-  padding: 4rem 2rem;
-  max-width: 800px;
-  margin: auto;
-  text-align: center;
-}
-.seccion h2 {
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  color: #388e3c;
+.hero {
+  position: relative;
+  overflow: hidden;
 }
 
-/* Pie de página */
-footer {
-  background-color: #e0e0e0;
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.9);
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
   text-align: center;
-  padding: 2rem 1rem;
-  margin-top: 2rem;
 }
-.redes a {
-  margin: 0 0.5rem;
-  color: #1b5e20;
-  text-decoration: none;
+
+.overlay-text h1 {
+  font-size: 4rem;
+  letter-spacing: 2px;
 }
-.redes a:hover {
-  text-decoration: underline;
+
+.overlay-text p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Intro actualizado para caja negra con texto blanco */
+.intro {
+  display: flex;
+  justify-content: center;
+  margin: 4rem 2rem; /* margen para separar del resto */
+}
+
+.bio-box {
+  background-color: #000;
+  color: #fff;
+  padding: 2rem;
+  max-width: 700px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.bio-box h2 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+/* Footer */
+footer {
+  padding: 2rem;
+  text-align: center;
+  background: #f3f3f3;
+  font-size: 0.9rem;
 }
