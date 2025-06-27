@@ -1,97 +1,220 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* CUERPO GENERAL */
+/* Estilos Generales y Reset Básico */
 body {
-  font-family: "Segoe UI", sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
-  line-height: 1.6;
+    font-family: Arial, sans-serif; /* Puedes cambiar a una fuente más moderna como 'Montserrat', 'Roboto', etc. */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
 }
 
-/* MENÚ SUPERIOR */
-.menu {
-  background-color: #1e1e1e;
-  padding: 15px 0;
-  text-align: center;
+/* Contenedor principal para centrar contenido */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.menu ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+.section-padding {
+    padding: 60px 20px;
+    margin: 0 auto;
+    max-width: 1000px; /* Ajusta según la anchura deseada para el contenido de las secciones */
 }
 
-.menu a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1em;
+.section-alt-background {
+    background-color: #f9f9f9; /* Un color de fondo ligeramente diferente para alternar secciones */
 }
 
-.menu a:hover {
-  text-decoration: underline;
+/* Navegación */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente para la barra de navegación */
+    color: #fff;
+    padding: 15px 0;
+    position: fixed; /* Barra de navegación fija en la parte superior */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* TÍTULO CENTRAL */
-.titulo {
-  text-align: center;
-  margin: 30px 0 20px 0;
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centra los elementos de la navegación */
 }
 
-.titulo h1 {
-  font-size: 3em;
-  color: #1e1e1e;
+.navbar nav ul li {
+    margin: 0 20px;
 }
 
-.titulo h2 {
-  font-size: 1.2em;
-  color: #555;
-  letter-spacing: 1px;
+.navbar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 0;
+    transition: color 0.3s ease;
 }
 
-/* IMÁGENES */
-.imagen {
-  display: flex;
-  justify-content: center;
-  margin: 25px 0;
+.navbar nav ul li a:hover {
+    color: #00bcd4; /* Un azul cian para el hover, puedes ajustar */
 }
 
-.imagen img {
-  max-width: 90%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+/* Sección Hero (Principal) */
+.hero-section {
+    position: relative;
+    height: 70vh; /* Altura de la sección visible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    margin-top: 60px; /* Espacio para la barra de navegación fija */
+    overflow: hidden; /* Asegura que la imagen de fondo no se desborde */
+
+    /* ***** AQUÍ ES DONDE AÑADES LA IMAGEN GRANDE DE FONDO DEL ENCABEZADO ***** */
+    /* Reemplaza 'ruta/a/tu/imagen-fondo-biotopia.jpg' con la ruta real a tu imagen. */
+    /* Ejemplo si la imagen está en la misma carpeta: background-image: url('mi-imagen-de-encabezado.jpg'); */
+    /* Ejemplo si la imagen está en una carpeta 'images': background-image: url('images/mi-imagen-de-encabezado.jpg'); */
+    background-image: url('portada\portada.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-/* TEXTOS */
-.texto {
-  max-width: 800px;
-  margin: 0 auto 40px auto;
-  padding: 0 20px;
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Capa oscura para que el texto resalte */
+    z-index: 1;
 }
 
-.texto h3 {
-  font-size: 1.8em;
-  color: #00796b;
-  margin-bottom: 15px;
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
-.texto p {
-  margin-bottom: 15px;
-  font-size: 1em;
+.biotopia-title {
+    font-size: 5em; /* Tamaño grande para BIOTOPIA */
+    margin: 0;
+    letter-spacing: 5px; /* Espaciado entre letras para BIOTOPIA */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* PIE DE PÁGINA */
+.biotopia-subtitle {
+    font-size: 2em; /* Tamaño para DESIGN & RESEARCH */
+    margin-top: 10px;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos de Contenido General */
+h2 {
+    font-size: 2.5em;
+    color: #007bff; /* Color azul para los títulos de sección */
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    text-align: justify; /* Justifica el texto de los párrafos */
+}
+
+ul {
+    list-style: none; /* Quita los puntos de la lista */
+    padding: 0;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+ul li {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 30px;
+}
+
+ul li::before {
+    content: '•'; /* Un punto personalizado para la lista */
+    color: #007bff;
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+/* Estilo para imágenes responsivas añadidas con <img> */
+.responsive-img {
+    max-width: 100%; /* Asegura que la imagen no se desborde de su contenedor */
+    height: auto;    /* Mantiene la proporción de la imagen */
+    display: block;  /* Convierte la imagen en un bloque para centrarla con margen */
+    margin: 20px auto; /* Centra la imagen horizontalmente y le da margen vertical */
+    border-radius: 8px; /* Opcional: bordes redondeados para las imágenes */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Opcional: sombra sutil */
+}
+
+/* Footer */
 footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #ddd;
-  font-weight: bold;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* Responsive Design Básico */
+@media (max-width: 768px) {
+    .navbar nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero-section {
+        height: 50vh;
+        margin-top: 100px; /* Ajusta para la barra de navegación apilada */
+    }
+
+    .biotopia-title {
+        font-size: 3em;
+    }
+
+    .biotopia-subtitle {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .biotopia-title {
+        font-size: 2.5em;
+    }
+
+    .biotopia-subtitle {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    p, ul li {
+        font-size: 1em;
+    }
 }
