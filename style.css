@@ -1,17 +1,23 @@
-/* Reset */
+/* ---------- RESET BÁSICO ---------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ---------- VARIABLES ---------- */
+:root {
+  --espacio-hero: 0rem; /* Controla la separación desde la imagen de portada */
+}
+
+/* ---------- ESTILO GENERAL DEL BODY ---------- */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #111;
   background: #fff;
 }
 
-/* Navegación */
+/* ---------- HEADER / NAVEGACIÓN ---------- */
 header {
   position: fixed;
   top: 0;
@@ -21,8 +27,6 @@ header {
   text-align: center;
   z-index: 1000;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-
-  font-family: 'Syne', sans-serif;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -39,23 +43,21 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Contenedor central para alinear imagen y rectángulos con espacio lateral */
-.contenedor-central {
+/* ---------- CONTENEDOR COMÚN ---------- */
+.contenido-centrado {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 40px;
-  box-sizing: border-box;
+  padding: 0 2rem;
 }
 
-/* Hero */
+/* ---------- SECCIÓN HERO (PORTADA) ---------- */
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 2rem 0;
 }
 
 .hero img {
-  width: 100%;  /* ocupa todo el ancho del contenedor menos padding */
+  width: 100%;
   height: auto;
   display: block;
   filter: brightness(0.9);
@@ -71,7 +73,7 @@ nav a:hover {
   color: white;
   text-align: center;
   width: 90%;
-  max-width: 900px;
+  max-width: 1000px;
 }
 
 .overlay-text h1 {
@@ -84,40 +86,40 @@ nav a:hover {
   margin-top: 1rem;
 }
 
-/* Sección con dos rectángulos negros */
-.bioescuela-section {
+/* ---------- SECCIÓN TEXTO BIOTOPÍA ---------- */
+.texto-biotopia {
   display: flex;
-  gap: 20px;
   justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-  align-items: stretch; /* Hace que los rectángulos tengan la misma altura */
+  align-items: center;
+  min-height: 70vh;
+  padding: 2rem;
+  background-color: #fff;
+  text-align: center;
+  margin-top: var(--espacio-hero); /* Control de separación desde .hero */
 }
 
-.rectangulo {
-  background-color: #000;
-  color: #fff;
-  padding: 20px;
-  width: calc((100% - 20px) / 2); /* dos rectángulos con gap de 20px */
-  box-sizing: border-box;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  font-size: 1.1rem;
-  line-height: 1.6;
-  text-align: left;
+.texto-biotopia .contenido {
+  max-width: 800px;
+  padding: 2rem;
+  border-radius: 12px;
 }
 
-.rectangulo h3 {
-  margin-bottom: 15px;
-  font-size: 1.5rem;
+.texto-biotopia h2 {
+  font-size: 3rem;
   font-weight: 700;
+  color: #111;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.rectangulo p {
-  margin-top: 0;
+.texto-biotopia p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-/* Footer */
+/* ---------- FOOTER ---------- */
 footer {
   padding: 2rem;
   text-align: center;
@@ -125,41 +127,16 @@ footer {
   font-size: 0.9rem;
 }
 
+/* ---------- RESPONSIVE MÓVIL ---------- */
 @media only screen and (max-width: 600px) {
-  /* Contenedor centrado sin padding lateral muy grande */
   .contenido-centrado {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0 1rem;
     max-width: 100%;
   }
 
-  /* Imagen hero más espaciosa y sin corte */
   .hero img {
-    width: 100%;
-    height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  }
-
-  /* Apilar los rectángulos y espacio entre ellos */
-  .bioescuela-section {
-    flex-direction: column;
-    gap: 1.5rem; /* más espacio vertical */
-  }
-
-  .rectangulo {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 1.5rem 1.5rem;
-    font-size: 1.05rem;
-    line-height: 1.5;
-    border-radius: 8px;
-  }
-
-  /* Mejorar lectura de títulos y texto */
-  .rectangulo h3 {
-    font-size: 1.6rem;
-    margin-bottom: 0.8rem;
   }
 
   .overlay-text h1 {
@@ -172,10 +149,35 @@ footer {
     margin-top: 0.6rem;
   }
 
-  /* Para evitar que la superposición del texto quede muy comprimida */
   .overlay-text {
     width: 95%;
     max-width: none;
     padding: 0 1rem;
   }
+
+  .texto-biotopia {
+    min-height: auto;
+    margin-top: var(--espacio-hero);
+    padding: 2rem 1rem;
+  }
+
+  .texto-biotopia h2 {
+    font-size: 2.2rem;
+  }
+
+  .texto-biotopia p {
+    font-size: 1rem;
+  }
+}
+
+/* ---------- EFECTO FADE IN ---------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
