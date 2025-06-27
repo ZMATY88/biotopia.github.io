@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Configuración general del documento -->
+  <meta charset="UTF-8" />
+  <title>Biotopía</title>
+
+  <!-- Importación de fuentes desde Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700&family=Syne:wght@700&display=swap" rel="stylesheet" />
+
+  <!-- Enlace al archivo de estilos CSS externo -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Encabezado del sitio con navegación -->
+  <header>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Sección de portada (hero), con imagen de fondo y texto superpuesto -->
+    <section class="hero">
+      <img src="portada/portada.png" alt="Imagen de un estudio creativo con un ambiente moderno y natural." />
+      <div class="overlay-text">
+        <h1>Biotopía</h1>
+        <p>Creando sinergia entre la naturaleza y la humanidad.</p>
+      </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN: ¿Por qué una Biotopía? con clase fade-in para animación -->
+    <section class="texto-biotopia fade-in">
+      <div class="contenido">
+        <h2>¿Por qué Biotopía?</h2>
+        <p>
+          Los seres humanos somos las únicas especies que hemos cambiado el ambiente para adaptarlo a 
+          nosotros proliferando así en cada sistema ecológico sobre la tierra. Todo el resto de las especies se 
+          han cambiado a sí mismas para adaptarse al ambiente restringiendo a la capacidad que cada sistema 
+          ecológico es capaz de soportar. ¿Encontraríamos nuevos modelos, nuevas formas de vivir si en el diseño 
+          de nuestras ciudades el ser humano deja de ser el centro de las preguntas y se incluyen también las 
+          necesidades de todos los seres vivos?
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página con derechos reservados -->
+  <footer>
+    <p>&copy; 2025 Biotopía</p>
+  </footer>
+
+  <!-- Script para animación fade-in repetible -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const faders = document.querySelectorAll('.fade-in');
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          } else {
+            entry.target.classList.remove('visible');
+          }
+        });
+      }, {
+        threshold: 0.2
+      });
+
+      faders.forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
